@@ -1,0 +1,27 @@
+/* Moving text start */
+.MovingText__container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.MovingText__movingTexts {
+    display: flex;
+    animation: scroll 20s linear infinite;
+}
+
+.MovingText__movingTexts h1 {
+    margin-right: 32px;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+/* Moving Text Ends */
+
