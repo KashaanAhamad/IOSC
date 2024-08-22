@@ -1,6 +1,5 @@
 import React from "react";
 import "./index.css";
-import "./Home.css";
 import Iosclogo from "./Assets/website background.png";
 import backGroundImage from "./Assets/background.jpg"
 

@@ -12,10 +12,10 @@ import Companies from "./Companies.jsx"
 const App = () => {
   return (
     <>
-      <Home />
+      <Home />  
       <Cards />
       <Departments />
-      {/* <Companies /> */}
+      <Companies /> 
       <SlidingMenu />
       <MovingText />
 
@@ -173,6 +173,9 @@ const App = () => {
           </div>
         </div>
       </footer>
+
+      {/* <h1 className="text-7xl">IOSC</h1> */}
+      
     </>
   );
 };
