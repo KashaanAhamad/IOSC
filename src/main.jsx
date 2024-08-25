@@ -2,11 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
-import Team from "./Team.jsx";
+import Team from "./Home/Team/Team.jsx";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import AIPage from "./AIPage.jsx";
-import WebD from "./WebD.jsx";
-import IOT from "./IOT.jsx";
+import AIPage from "./Department/AI-ML/AIPage.jsx";
+import WebD from "./Department/WebD/WebD.jsx";
+import IOT from "./Department/IOT/IOT.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

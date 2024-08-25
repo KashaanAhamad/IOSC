@@ -1,19 +1,17 @@
 import React from "react";
-import "./index.css";
+import "../../index.css";
 import "./SlidingMenu.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Ironman from "./Assets/iron-man.jpg";
-import CaptainAmerica from "./Assets/captain-america.jpg";
-import Thor from "./Assets/Thor.jpg";
-import Hulk from "./Assets/hulk.png";
-import BlackWidow from "./Assets/black-widow.jpg";
-import Hawkeye from "./Assets/hawkeye.jpg";
-
-
-
-
+import Ironman from "../../Assets/iron-man.jpg";
+import CaptainAmerica from "../../Assets/captain-america.jpg";
+import Thor from "../../Assets/Thor.jpg";
+import Hulk from "../../Assets/hulk.png";
+import BlackWidow from "../../Assets/black-widow.jpg";
+import Hawkeye from "../../Assets/hawkeye.jpg";
+// import AOS from "aos";
+import "aos/dist/aos.css";
 
 const SlidingMenu = () => {
   var settings = {
@@ -28,13 +26,25 @@ const SlidingMenu = () => {
   const MainBox = "MainBox";
   const className = "Cards";
   const InsideCard = "insideCard";
+
+  // useEffect(() => {
+  //   AOS.init({
+  //     duration: 1000, // duration of the animation
+  //     easing: 'ease-in-out', // easing of the animation
+  //     once: false, // animation occurs only once
+  //   });
+  // }, []);
+
   return (
     <>
       {/* Main Container */}
       <div className={MainBox + "__box flex flex-col bg-[#000029] pb-[4rem]"}>
         {/* Info Starts */}
 
-        <div className="w-[37rem] flex flex-col justify-center">
+        <div
+          className="w-[37rem] flex flex-col justify-center"
+          data-aos="fade-up"
+        >
           <div className="flex flex-col ml-[7rem] gap-[20px]">
             <div>
               <h1 className="text-bold text-6xl text-white">
@@ -58,7 +68,10 @@ const SlidingMenu = () => {
 
         {/* Sliding Menu Start */}
 
-        <div className="w-1/2 ml-[3rem]  rounded-xl flex flex-col">
+        <div
+          className="w-1/2 ml-[3rem]  rounded-xl flex flex-col"
+          data-aos="fade-up"
+        >
           <div className="mt-10">
             <Slider {...settings} className="">
               {/* Card1 */}
@@ -110,7 +123,9 @@ const SlidingMenu = () => {
                   />
                 </div>
                 <div className="flex flex-col  mt-2.5 ">
-                  <p className="text-xl text-white font-semibold">Captain America</p>
+                  <p className="text-xl text-white font-semibold">
+                    Captain America
+                  </p>
                   <p>Lorem</p>
                   <button className="bg-blue-950 text-white h-7 w-24 rounded-xl">
                     More Info
@@ -197,7 +212,9 @@ const SlidingMenu = () => {
                   />
                 </div>
                 <div className="flex flex-col  mt-2.5 ">
-                  <p className="text-xl text-white font-semibold">Black Widow</p>
+                  <p className="text-xl text-white font-semibold">
+                    Black Widow
+                  </p>
                   <p>Lorem</p>
                   <button className="bg-blue-950 text-white h-7 w-24 rounded-xl">
                     More Info
@@ -244,13 +261,6 @@ const SlidingMenu = () => {
 };
 
 export default SlidingMenu;
-
-
-
-
-
-
-
 
 // const SlidingMenu = () => {
 //     const settings = {

@@ -2,18 +2,16 @@ import React, { useEffect } from "react";
 import "./index.css";
 import twitter from "./Assets/icons8-twitter-48.png";
 import instagram from "./Assets/instagram.png";
-import Home from "./Home.jsx";
-import Cards from "./Cards.jsx";
-import SlidingMenu from "./SlidingMenu.jsx";
-import MovingText from "./MovingText.jsx";
-import Departments from "./Departments.jsx";
-import Companies from "./Companies.jsx";
+import Home from "./Home/Home.jsx";
+import Cards from "./Home/Card/Cards.jsx";
+import SlidingMenu from "./Home/Sliding Menu/SlidingMenu.jsx";
+import MovingText from "./Home/Moving Text/MovingText.jsx";
+import Departments from "./Department/Departments.jsx";
+import Companies from "./Home/Companies/Companies.jsx";
 // import AOS from "aos";
-// import "aos/dist/aos.css";
+import "aos/dist/aos.css";
 
 const App = () => {
-
-
   // useEffect(() => {
   //   AOS.init({
   //     duration: 600, // duration of the animation
@@ -21,12 +19,9 @@ const App = () => {
   //   });
   // }, []);
 
-
-
   return (
     <>
-      
-      <Home  />
+      <Home />
       <Cards />
       <Departments />
       <Companies />
@@ -34,7 +29,7 @@ const App = () => {
       <MovingText />
 
       <footer className="relative h-[20rem] pt-[4rem] content-center bg-[#000029] pt-8 pb-6 transition delay-500">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4" data-aos="fade-up">
           <div className="flex flex-wrap text-left lg:text-left">
             <div className="w-full lg:w-6/12 px-4">
               <h4 className="text-3xl fonat-semibold text-white">Contact Us</h4>

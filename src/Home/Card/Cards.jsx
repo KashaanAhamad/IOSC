@@ -1,14 +1,12 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import "./index.css";
+import "../../index.css";
 import "./Cards.css";
-import Earth from "./Assets/Earth.jpg";
-import Sky from "./Assets/Sky.jpg";
+import Earth from "../../Assets/Earth.jpg";
+import Sky from "../../Assets/Sky.jpg";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
-
 
 const Cards = () => {
   // Card 1
@@ -37,7 +35,6 @@ const Cards = () => {
     }
   }
 
-
   // Card 3
   const [isFlipped3, setIsFlipped3] = useState(false);
 
@@ -50,7 +47,6 @@ const Cards = () => {
       setIsAnimating3(true);
     }
   }
-
 
   // Card 4
   const [isFlipped4, setIsFlipped4] = useState(false);
@@ -65,23 +61,29 @@ const Cards = () => {
     }
   }
 
-
   useEffect(() => {
     AOS.init({
-      duration: 1500, // duration of the animation
-      once: true, // animation occurs only once
+      duration: 1000, // duration of the animation
+      easing: "ease-in-out", // easing of the animation
+      once: false, // animation occurs only once
     });
   }, []);
 
   return (
     <>
-      <div id="Events" className="flex flex-col gap-8 justify-center bg-[#000029] h-[145rem] w-[94.55rem] p-12">
+      <div
+        id="Events"
+        className="flex flex-col gap-8 justify-center bg-[#000029] h-[145rem] w-[94.55rem] p-12"
+      >
         <div className="h-[5rem]" data-aos="fade-up">
           <h1 className="text-6xl text-center text-white">Our Events</h1>
         </div>
         <div className="h-[130rem] w-[88.5rem]">
           {/* Event 1 starts */}
-          <div className="flex items-center gap-4 h-[28rem] m-16" data-aos="fade-up">
+          <div
+            className="flex items-center gap-4 h-[28rem] m-16"
+            data-aos="fade-up"
+          >
             <div>
               {/* Card 1 */}
               <div
@@ -97,7 +99,7 @@ const Cards = () => {
                 >
                   <div
                     className="flip-card-front flex items-center flex-col gap-[5.5rem] w-[100%] h-[100%] bg-cover border-[1px] text-white p-4 rounded-2xl cursor-pointer"
-                    style={{ backgroundImage: `url(${Sky})`}}
+                    style={{ backgroundImage: `url(${Sky})` }}
                   >
                     <h1 className="text-2xl font-bold/ my-[1.5rem]">Sky</h1>
                     <p>
@@ -136,7 +138,10 @@ const Cards = () => {
           </div>
 
           {/* Event 2 starts */}
-          <div className="flex items-center gap-32 h-[28rem] m-16" data-aos="fade-up">
+          <div
+            className="flex items-center gap-32 h-[28rem] m-16"
+            data-aos="fade-up"
+          >
             <div className="flex flex-col justify-center gap-16 h-[20rem] w-[47rem]">
               <div className="text-6xl text-white">
                 <h1>Event Heading</h1>
@@ -165,7 +170,7 @@ const Cards = () => {
                 >
                   <div
                     className="flip-card-front flex items-center flex-col gap-[5.5rem] w-[100%] h-[100%] bg-cover border-[1px] text-white p-4 rounded-2xl cursor-pointer"
-                    style={{ backgroundImage: `url(${Sky})`}}
+                    style={{ backgroundImage: `url(${Sky})` }}
                   >
                     <h1 className="text-2xl font-bold/ my-[1.5rem]">Sky</h1>
                     <p>
@@ -191,7 +196,10 @@ const Cards = () => {
           </div>
 
           {/* Event 3 starts */}
-          <div className="flex items-center gap-4 h-[28rem] m-16" data-aos="fade-up">
+          <div
+            className="flex items-center gap-4 h-[28rem] m-16"
+            data-aos="fade-up"
+          >
             <div>
               {/* Card 3 */}
               <div
@@ -207,7 +215,7 @@ const Cards = () => {
                 >
                   <div
                     className="flip-card-front flex items-center flex-col gap-[5.5rem] w-[100%] h-[100%] bg-cover border-[1px] text-white p-4 rounded-2xl cursor-pointer"
-                    style={{ backgroundImage: `url(${Sky})`}}
+                    style={{ backgroundImage: `url(${Sky})` }}
                   >
                     <h1 className="text-2xl font-bold/ my-[1.5rem]">Sky</h1>
                     <p>
@@ -226,7 +234,7 @@ const Cards = () => {
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Eveniet nulla repellat explicabo quis labore? Culpa!
                     </p>
-                  </div> 
+                  </div>
                 </motion.div>
               </div>
             </div>
@@ -246,7 +254,10 @@ const Cards = () => {
           </div>
 
           {/* Event 4 starts */}
-          <div className="flex items-center gap-32 h-[28rem] m-16" data-aos="fade-up">
+          <div
+            className="flex items-center gap-32 h-[28rem] m-16"
+            data-aos="fade-up"
+          >
             <div className="flex flex-col justify-center gap-16 h-[20rem] w-[47rem]">
               <div className="text-6xl text-white">
                 <h1>Event Heading</h1>
@@ -275,7 +286,7 @@ const Cards = () => {
                 >
                   <div
                     className="flip-card-front flex items-center flex-col gap-[5.5rem] w-[100%] h-[100%] bg-cover border-[1px] text-white p-4 rounded-2xl cursor-pointer"
-                    style={{ backgroundImage: `url(${Sky})`}}
+                    style={{ backgroundImage: `url(${Sky})` }}
                   >
                     <h1 className="text-2xl font-bold/ my-[1.5rem]">Sky</h1>
                     <p>
@@ -299,7 +310,6 @@ const Cards = () => {
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </>

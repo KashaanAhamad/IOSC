@@ -6,22 +6,14 @@ import {
   useSpring,
 } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import "./index.css";
-import AIML from "./Assets/AI-ML.jpg";
-import WebD from "./Assets/Web.jpg";
-import IOT from "./Assets/IOT.png";
+import "../index.css";
+import AIML from "../Assets/AI-ML.jpg";
+import WebD from "../Assets/Web.jpg";
+import IOT from "../Assets/IOT.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 const Example = () => {
-
-  // useEffect(() => {
-  //   AOS.init({
-  //     duration: 1500, // duration of the animation
-  //     once: true, // animation occurs only once
-  //   });
-  // }, []);
-
 
   useEffect(() => {
     AOS.init({

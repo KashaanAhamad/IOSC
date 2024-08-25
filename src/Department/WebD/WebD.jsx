@@ -10,29 +10,21 @@ import {
 import { FiArrowUpRight, FiArrowRight, FiMapPin } from "react-icons/fi";
 import { useRef } from "react";
 import { useLocation } from "react-router-dom";
-import Sky from "./Assets/Sky.jpg";
-import Project1 from "./Assets/Project-1.png"
-import Project2 from "./Assets/Project-2.png"
-import Project3 from "./Assets/Project-3.png"
-import Project4 from "./Assets/Project-4.png"
+import Sky from "../../Assets/Sky.jpg";
+import Project1 from "../../Assets/Project-1.png";
+import Project2 from "../../Assets/Project-2.png";
+import Project3 from "../../Assets/Project-3.png";
+import Project4 from "../../Assets/Project-4.png";
 // import { Lenis, useLenis } from '@studio-freight/react-lenis';
 // import { SiSpacex } from "react-icons/si";
 
-
-
-
-
 const WebD = () => {
-
-
   const location = useLocation();
 
   useEffect(() => {
     // Scroll to the top whenever the component mounts
     window.scrollTo(0, 0);
   }, []);
-
-
 
   return (
     <>
@@ -41,8 +33,8 @@ const WebD = () => {
           root
           options={{
             lerp: 0.05,
-              infinite: true,
-              syncTouch: true,
+            infinite: true,
+            syncTouch: true,
           }}
         >
           <Nav />
@@ -53,13 +45,11 @@ const WebD = () => {
         </useLenis>
       </div>
 
-
-
-
-
       <div className="h-full w-full bg-zinc-950">
         <section className="grid h-full w-[40rem] text-2xl gap-2 bg-zinc-950 px-4 py-12 text-white">
-          <FlipLink href="#" className="w-[8rem]">Twitter</FlipLink>
+          <FlipLink href="#" className="w-[8rem]">
+            Twitter
+          </FlipLink>
           <FlipLink href="#">Linkedin</FlipLink>
           <FlipLink href="#">Facebook</FlipLink>
           <FlipLink href="https://www.instagram.com/iosc.bvcoe?igsh=bjc1dDBveXozZ3Js">
@@ -67,25 +57,18 @@ const WebD = () => {
           </FlipLink>
         </section>
       </div>
-
-
-
-
     </>
   );
 };
 
 export default WebD;
 
-
-
-
 const Nav = () => {
   return (
     <nav className="fixed  right-[1px] top-0 z-50 flex items-center justify-between px-6 py-3 text-white">
       {/* <SiSpacex className="text-3xl mix-blend-difference" /> */}
       <div className="flex items-center mr-[37rem] gap-1 text-zinc-400 hover:text-white cursor-pointer">
-      <p className=" text-2xl">IOSC-WEBD</p>
+        <p className=" text-2xl">IOSC-WEBD</p>
       </div>
       <button
         onClick={() => {
@@ -100,8 +83,6 @@ const Nav = () => {
     </nav>
   );
 };
-
-
 
 const SECTION_HEIGHT = 1500;
 
@@ -119,9 +100,6 @@ const Hero = () => {
     </div>
   );
 };
-
-
-
 
 const CenterImage = () => {
   const { scrollY } = useScroll();
@@ -156,11 +134,6 @@ const CenterImage = () => {
     />
   );
 };
-
-
-
-
-
 
 const ParallaxImages = () => {
   return (
@@ -197,10 +170,6 @@ const ParallaxImages = () => {
   );
 };
 
-
-
-
-
 const ParallaxImg = ({ className, alt, src, start, end }) => {
   const ref = useRef(null);
 
@@ -226,22 +195,7 @@ const ParallaxImg = ({ className, alt, src, start, end }) => {
   );
 };
 
-
-
-
-
-
-
-
-
-
-
-// 
-
-
-
-
-
+//
 
 // const ScheduleItem = ({ title, date, location }) => {
 //   return (
@@ -263,14 +217,7 @@ const ParallaxImg = ({ className, alt, src, start, end }) => {
 //   );
 // };
 
-
-
-
-
-
-
 // Footer Links Start
-
 
 const DURATION = 0.25;
 const STAGGER = 0.025;
@@ -336,22 +283,9 @@ const FlipLink = ({ children, href }) => {
   );
 };
 
-
 // Footer Links End
 
-
-
-
-
-
-
-
-
-
-
-
 // Project Starts
-
 
 const HoverImageLinks = () => {
   return (
@@ -391,11 +325,6 @@ const HoverImageLinks = () => {
     </section>
   );
 };
-
-
-
-
-
 
 const Link = ({ heading, imgSrc, subheading, href }) => {
   const ref = useRef(null);
@@ -503,26 +432,7 @@ const Link = ({ heading, imgSrc, subheading, href }) => {
   );
 };
 
-
-
-
-
 // Project Ends
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // TEXTPARALLAX STARTS
 
@@ -554,8 +464,6 @@ const TextParallaxContentExample = () => {
   );
 };
 
-
-
 // Image Heading Starts
 
 const IMG_PADDING = 12;
@@ -578,11 +486,6 @@ const TextParallaxContent = ({ imgUrl, subheading, heading, children }) => {
 };
 
 // Image Heading Ends
-
-
-
-
-
 
 // Images Function Starts
 
@@ -621,11 +524,6 @@ const StickyImage = ({ imgUrl }) => {
 
 // Images Function Ends
 
-
-
-
-
-
 const OverlayCopy = ({ subheading, heading }) => {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -653,10 +551,6 @@ const OverlayCopy = ({ subheading, heading }) => {
   );
 };
 
-
-
-
-
 // Content Starts
 
 const ExampleContent1 = () => (
@@ -682,8 +576,6 @@ const ExampleContent1 = () => (
   </div>
 );
 
-
-
 const ExampleContent2 = () => (
   <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-4 pb-24 pt-12 md:grid-cols-12">
     <h2 className="col-span-1 text-3xl font-bold md:col-span-4 text-white">
@@ -706,9 +598,6 @@ const ExampleContent2 = () => (
     </div>
   </div>
 );
-
-
-
 
 const ExampleContent3 = () => (
   <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-4 pb-24 pt-12 md:grid-cols-12">
@@ -735,10 +624,4 @@ const ExampleContent3 = () => (
 
 // Content Ends
 
-
-
 // TEXTPARALLAX ENDS
-
-
-
-

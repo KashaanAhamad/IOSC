@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./index.css";
+import "../../index.css";
 import "./Companies.css"
 import styled, { keyframes, css } from "styled-components";
 import AOS from "aos";
