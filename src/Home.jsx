@@ -1,17 +1,57 @@
 import React from "react";
 import "./index.css";
 import Iosclogo from "./Assets/website background.png";
-import backGroundImage from "./Assets/background.jpg"
+import backGroundImage from "./Assets/background.jpg";
+import { Link } from "react-router-dom";
+// import AOS from "aos";
+// import "aos/dist/aos.css";
 
 const Home = () => {
-  // const backgroundImage = "home-background";
+  const scrollToElement = (elementId, duration) => {
+    const target = document.getElementById(elementId);
+    if (!target) return;
+
+    const startPosition = window.pageYOffset;
+    const targetPosition = target.getBoundingClientRect().top;
+    const startTime = performance.now();
+
+    const easeInOutQuad = (t) =>
+      t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+
+    const animateScroll = (currentTime) => {
+      const timeElapsed = currentTime - startTime;
+      const run =
+        easeInOutQuad(timeElapsed / duration) * targetPosition + startPosition;
+      window.scrollTo(0, run);
+
+      if (timeElapsed < duration) {
+        requestAnimationFrame(animateScroll);
+      } else {
+        window.scrollTo(0, startPosition + targetPosition); // Ensure it ends at the exact position
+      }
+    };
+
+    requestAnimationFrame(animateScroll);
+  };
+
+
+  // useEffect(() => {
+  //   AOS.init({
+  //     duration: 1000, // duration of the animation
+  //     once: true, // animation occurs only once
+  //   });
+  // }, []);
+
   return (
     <>
-      <div className="h-screen w-[94.55rem] bg-fixed" style={{
-        backgroundImage: `url(${backGroundImage})`,
-        backgroundPosition: `center`,
-        backgroundSize: `cover`,
-      }}>
+      <div
+        className="h-screen w-[94.55rem] bg-fixed"
+        style={{
+          backgroundImage: `url(${backGroundImage})`,
+          backgroundPosition: `center`,
+          backgroundSize: `cover`,
+        }}
+      >
         <div className="bg-transparent">
           <header className=" flex items-center justify-center  bg-opacity-5 text-white  hidden md:block">
             <div className="container mx-auto flex items-center h-20 ">
@@ -25,26 +65,21 @@ const Home = () => {
                       <span>Home</span>
                     </a>
                   </li>
-                  <li className="p-5 xl:p-8 hover:text-blue-200">
-                    <a href="">
-                      <span>About</span>
-                    </a>
-                  </li>
-                  <li className="p-5 xl:p-8 hover:text-blue-200">
-                    <a href="">
-                      <span>Projects</span>
-                    </a>
-                  </li>
-                  <li className="p-5 xl:p-8 hover:text-blue-200">
-                    <a href="">
-                      <span>Services</span>
-                    </a>
-                  </li>
-                  <li className="p-5 xl:p-8 hover:text-blue-200">
-                    <a href="">
-                      <span>Blog</span>
-                    </a>
-                  </li>
+                  <Link className="p-5 xl:p-8 hover:text-blue-200" to="/team">
+                    <span>Team</span>
+                  </Link>
+                  <Link
+                    className="p-5 xl:p-8 hover:text-blue-200"
+                    onClick={() => scrollToElement("Departments", 1500)} // 1000ms = 1 second duration
+                  >
+                    <span>Departments</span>
+                  </Link>
+                  <Link
+                    className="p-5 xl:p-8 hover:text-blue-200"
+                    onClick={() => scrollToElement("Events", 1000)} // 1000ms = 1 second duration
+                  >
+                    <span>Events</span>
+                  </Link>
                 </ul>
               </nav>
               <button className="bg-transparent text-blue-200 h-10 w-32 rounded-full border-2 border-blue-300 transition-colors duration-700 hover:text-white hover:bg-blue-400 hover:border-black">

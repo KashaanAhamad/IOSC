@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./index.css";
 import twitter from "./Assets/icons8-twitter-48.png";
 import instagram from "./Assets/instagram.png";
@@ -7,19 +7,33 @@ import Cards from "./Cards.jsx";
 import SlidingMenu from "./SlidingMenu.jsx";
 import MovingText from "./MovingText.jsx";
 import Departments from "./Departments.jsx";
-import Companies from "./Companies.jsx"
+import Companies from "./Companies.jsx";
+// import AOS from "aos";
+// import "aos/dist/aos.css";
 
 const App = () => {
+
+
+  // useEffect(() => {
+  //   AOS.init({
+  //     duration: 600, // duration of the animation
+  //     once: true, // animation occurs only once
+  //   });
+  // }, []);
+
+
+
   return (
     <>
-      <Home />  
+      
+      <Home  />
       <Cards />
       <Departments />
-      <Companies /> 
+      <Companies />
       <SlidingMenu />
       <MovingText />
 
-      <footer className="relative bg-[#000029] pt-8 pb-6 transition delay-500">
+      <footer className="relative h-[20rem] pt-[4rem] content-center bg-[#000029] pt-8 pb-6 transition delay-500">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap text-left lg:text-left">
             <div className="w-full lg:w-6/12 px-4">
@@ -175,7 +189,6 @@ const App = () => {
       </footer>
 
       {/* <h1 className="text-7xl">IOSC</h1> */}
-      
     </>
   );
 };

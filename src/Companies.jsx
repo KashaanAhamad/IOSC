@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./index.css";
 import "./Companies.css"
 import styled, { keyframes, css } from "styled-components";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Companies = () => {
   // const className = "MovingCompanies";
@@ -27,7 +29,15 @@ const Companies = () => {
   const AppContainer = "AppContainer"
   const Wrapper = "Wrapper";
   const Text = "Text";
-//   const Note = "Note";
+  // const Note = "Note";
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1500, // duration of the animation
+      once: true, // animation occurs only once
+    });
+  }, []);
+
   return (
     <>
     <div className="flex items-center justify-center h-[40rem] w-full bg-[#000029] pb-[5rem]">
@@ -35,7 +45,7 @@ const Companies = () => {
         <Wrapper className={Wrapper}>
           <Text className={Text}>Our Partners</Text>
           {/* <Note className={Note}>Our customers have gotten offers from awesome companies.</Note> */}
-          <Marquee>
+          <Marquee data-aos="fade-up">
             <MarqueeGroup>
               {row1.map((el) => (
                 <ImageGroup>
@@ -51,7 +61,7 @@ const Companies = () => {
               ))}
             </MarqueeGroup>
           </Marquee>
-          <Marquee>
+          <Marquee data-aos="fade-up">
             <MarqueeGroup2>
               {row2.map((el) => (
                 <ImageGroup>

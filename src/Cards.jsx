@@ -1,10 +1,14 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import "./index.css";
 import "./Cards.css";
 import Earth from "./Assets/Earth.jpg";
 import Sky from "./Assets/Sky.jpg";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+
 
 const Cards = () => {
   // Card 1
@@ -61,15 +65,23 @@ const Cards = () => {
     }
   }
 
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1500, // duration of the animation
+      once: true, // animation occurs only once
+    });
+  }, []);
+
   return (
     <>
-      <div className="flex flex-col gap-8 justify-center bg-[#000029] h-[150rem] w-[94.55rem] p-12">
-        <div className="h-[5rem]">
+      <div id="Events" className="flex flex-col gap-8 justify-center bg-[#000029] h-[145rem] w-[94.55rem] p-12">
+        <div className="h-[5rem]" data-aos="fade-up">
           <h1 className="text-6xl text-center text-white">Our Events</h1>
         </div>
         <div className="h-[130rem] w-[88.5rem]">
           {/* Event 1 starts */}
-          <div className="flex items-center gap-4 h-[28rem] m-16">
+          <div className="flex items-center gap-4 h-[28rem] m-16" data-aos="fade-up">
             <div>
               {/* Card 1 */}
               <div
@@ -124,7 +136,7 @@ const Cards = () => {
           </div>
 
           {/* Event 2 starts */}
-          <div className="flex items-center gap-32 h-[28rem] m-16">
+          <div className="flex items-center gap-32 h-[28rem] m-16" data-aos="fade-up">
             <div className="flex flex-col justify-center gap-16 h-[20rem] w-[47rem]">
               <div className="text-6xl text-white">
                 <h1>Event Heading</h1>
@@ -179,7 +191,7 @@ const Cards = () => {
           </div>
 
           {/* Event 3 starts */}
-          <div className="flex items-center gap-4 h-[28rem] m-16">
+          <div className="flex items-center gap-4 h-[28rem] m-16" data-aos="fade-up">
             <div>
               {/* Card 3 */}
               <div
@@ -234,7 +246,7 @@ const Cards = () => {
           </div>
 
           {/* Event 4 starts */}
-          <div className="flex items-center gap-32 h-[28rem] m-16">
+          <div className="flex items-center gap-32 h-[28rem] m-16" data-aos="fade-up">
             <div className="flex flex-col justify-center gap-16 h-[20rem] w-[47rem]">
               <div className="text-6xl text-white">
                 <h1>Event Heading</h1>
