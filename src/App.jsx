@@ -25,7 +25,7 @@ const App = () => {
       <Cards />
       <Departments />
       <Companies />
-      <SlidingMenu />
+      {/* <SlidingMenu /> */}
       <MovingText />
 
       <footer className="relative h-[20rem] pt-[4rem] content-center bg-[#000029] pt-8 pb-6 transition delay-500">
