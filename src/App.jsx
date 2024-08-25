@@ -4,7 +4,7 @@ import twitter from "./Assets/icons8-twitter-48.png";
 import instagram from "./Assets/instagram.png";
 import Home from "./Home/Home.jsx";
 import Cards from "./Home/Card/Cards.jsx";
-import SlidingMenu from "./Home/Sliding Menu/SlidingMenu.jsx";
+// import SlidingMenu from "./Home/Sliding Menu/SlidingMenu.jsx";
 import MovingText from "./Home/Moving Text/MovingText.jsx";
 import Departments from "./Department/Departments.jsx";
 import Companies from "./Home/Companies/Companies.jsx";

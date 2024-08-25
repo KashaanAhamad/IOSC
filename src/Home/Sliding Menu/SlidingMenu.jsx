@@ -1,266 +1,266 @@
-import React from "react";
-import "../../index.css";
-import "./SlidingMenu.css";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Ironman from "../../Assets/iron-man.jpg";
-import CaptainAmerica from "../../Assets/captain-america.jpg";
-import Thor from "../../Assets/Thor.jpg";
-import Hulk from "../../Assets/hulk.png";
-import BlackWidow from "../../Assets/black-widow.jpg";
-import Hawkeye from "../../Assets/hawkeye.jpg";
-// import AOS from "aos";
-import "aos/dist/aos.css";
+// import React from "react";
+// import "../../index.css";
+// import "./SlidingMenu.css";
+// import Slider from "react-slick";
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
+// import Ironman from "../../Assets/iron-man.jpg";
+// import CaptainAmerica from "../../Assets/captain-america.jpg";
+// import Thor from "../../Assets/Thor.jpg";
+// import Hulk from "../../Assets/hulk.png";
+// import BlackWidow from "../../Assets/black-widow.jpg";
+// import Hawkeye from "../../Assets/hawkeye.jpg";
+// // import AOS from "aos";
+// import "aos/dist/aos.css";
 
-const SlidingMenu = () => {
-  var settings = {
-    dots: false,
-    infinite: true,
-    slidesToShow: 2.5,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    pauseOnHover: true,
-  };
-  const MainBox = "MainBox";
-  const className = "Cards";
-  const InsideCard = "insideCard";
+// const SlidingMenu = () => {
+//   var settings = {
+//     dots: false,
+//     infinite: true,
+//     slidesToShow: 2.5,
+//     slidesToScroll: 1,
+//     autoplay: true,
+//     autoplaySpeed: 2000,
+//     pauseOnHover: true,
+//   };
+//   const MainBox = "MainBox";
+//   const className = "Cards";
+//   const InsideCard = "insideCard";
 
-  // useEffect(() => {
-  //   AOS.init({
-  //     duration: 1000, // duration of the animation
-  //     easing: 'ease-in-out', // easing of the animation
-  //     once: false, // animation occurs only once
-  //   });
-  // }, []);
+//   // useEffect(() => {
+//   //   AOS.init({
+//   //     duration: 1000, // duration of the animation
+//   //     easing: 'ease-in-out', // easing of the animation
+//   //     once: false, // animation occurs only once
+//   //   });
+//   // }, []);
 
-  return (
-    <>
-      {/* Main Container */}
-      <div className={MainBox + "__box flex flex-col bg-[#000029] pb-[4rem]"}>
-        {/* Info Starts */}
+//   return (
+//     <>
+//       {/* Main Container */}
+//       <div className={MainBox + "__box flex flex-col bg-[#000029] pb-[4rem]"}>
+//         {/* Info Starts */}
 
-        <div
-          className="w-[37rem] flex flex-col justify-center"
-          data-aos="fade-up"
-        >
-          <div className="flex flex-col ml-[7rem] gap-[20px]">
-            <div>
-              <h1 className="text-bold text-6xl text-white">
-                Our Recent Hackathons
-              </h1>
-            </div>
-            <div className="text-white text-lg">
-              <p className="pb-[20px]">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Temporibus ut, minima ab aliquid numquam iusto tenetur officia
-                libero perferendis. Aut!
-              </p>
-              <button className="bg-[#000029] h-10 w-32 rounded-full border-2 border-blue-300 transition-colors duration-500 hover:text-white hover:bg-blue-400 hover:border-black">
-                Read More
-              </button>
-            </div>
-          </div>
-        </div>
+//         <div
+//           className="w-[37rem] flex flex-col justify-center"
+//           data-aos="fade-up"
+//         >
+//           <div className="flex flex-col ml-[7rem] gap-[20px]">
+//             <div>
+//               <h1 className="text-bold text-6xl text-white">
+//                 Our Recent Hackathons
+//               </h1>
+//             </div>
+//             <div className="text-white text-lg">
+//               <p className="pb-[20px]">
+//                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+//                 Temporibus ut, minima ab aliquid numquam iusto tenetur officia
+//                 libero perferendis. Aut!
+//               </p>
+//               <button className="bg-[#000029] h-10 w-32 rounded-full border-2 border-blue-300 transition-colors duration-500 hover:text-white hover:bg-blue-400 hover:border-black">
+//                 Read More
+//               </button>
+//             </div>
+//           </div>
+//         </div>
 
-        {/* Info Ends */}
+//         {/* Info Ends */}
 
-        {/* Sliding Menu Start */}
+//         {/* Sliding Menu Start */}
 
-        <div
-          className="w-1/2 ml-[3rem]  rounded-xl flex flex-col"
-          data-aos="fade-up"
-        >
-          <div className="mt-10">
-            <Slider {...settings} className="">
-              {/* Card1 */}
-              <div
-                className={
-                  className +
-                  "__Card bg-[#000029] h-[460px] text-black rounded-xl flex flex-col justify-center items-center"
-                }
-              >
-                <div
-                  className={
-                    InsideCard +
-                    "__insideCard rounded-xl w-full flex justify-center items-center"
-                  }
-                >
-                  <img
-                    src={Ironman}
-                    alt=""
-                    className="h-80 w-[23rem] rounded-xl"
-                  />
-                </div>
-                <div className="flex flex-col  mt-2.5">
-                  <p className="text-xl text-white font-semibold">Iron Man</p>
-                  <p>Lorem</p>
-                  <button className="bg-blue-950 text-white h-7 w-24 rounded-xl">
-                    More Info
-                  </button>
-                </div>
-              </div>
-              {/* End */}
+//         <div
+//           className="w-1/2 ml-[3rem]  rounded-xl flex flex-col"
+//           data-aos="fade-up"
+//         >
+//           <div className="mt-10">
+//             <Slider {...settings} className="">
+//               {/* Card1 */}
+//               <div
+//                 className={
+//                   className +
+//                   "__Card bg-[#000029] h-[460px] text-black rounded-xl flex flex-col justify-center items-center"
+//                 }
+//               >
+//                 <div
+//                   className={
+//                     InsideCard +
+//                     "__insideCard rounded-xl w-full flex justify-center items-center"
+//                   }
+//                 >
+//                   <img
+//                     src={Ironman}
+//                     alt=""
+//                     className="h-80 w-[23rem] rounded-xl"
+//                   />
+//                 </div>
+//                 <div className="flex flex-col  mt-2.5">
+//                   <p className="text-xl text-white font-semibold">Iron Man</p>
+//                   <p>Lorem</p>
+//                   <button className="bg-blue-950 text-white h-7 w-24 rounded-xl">
+//                     More Info
+//                   </button>
+//                 </div>
+//               </div>
+//               {/* End */}
 
-              {/* Card2 */}
-              <div
-                className={
-                  className +
-                  "__Card bg-[#000029] h-[460px] text-black rounded-xl flex flex-col justify-center items-center"
-                }
-              >
-                <div
-                  className={
-                    InsideCard +
-                    "__insideCard rounded-xl w-full flex justify-center items-center"
-                  }
-                >
-                  <img
-                    src={CaptainAmerica}
-                    alt=""
-                    className="h-80 w-[23rem] rounded-xl"
-                  />
-                </div>
-                <div className="flex flex-col  mt-2.5 ">
-                  <p className="text-xl text-white font-semibold">
-                    Captain America
-                  </p>
-                  <p>Lorem</p>
-                  <button className="bg-blue-950 text-white h-7 w-24 rounded-xl">
-                    More Info
-                  </button>
-                </div>
-              </div>
-              {/* End */}
+//               {/* Card2 */}
+//               <div
+//                 className={
+//                   className +
+//                   "__Card bg-[#000029] h-[460px] text-black rounded-xl flex flex-col justify-center items-center"
+//                 }
+//               >
+//                 <div
+//                   className={
+//                     InsideCard +
+//                     "__insideCard rounded-xl w-full flex justify-center items-center"
+//                   }
+//                 >
+//                   <img
+//                     src={CaptainAmerica}
+//                     alt=""
+//                     className="h-80 w-[23rem] rounded-xl"
+//                   />
+//                 </div>
+//                 <div className="flex flex-col  mt-2.5 ">
+//                   <p className="text-xl text-white font-semibold">
+//                     Captain America
+//                   </p>
+//                   <p>Lorem</p>
+//                   <button className="bg-blue-950 text-white h-7 w-24 rounded-xl">
+//                     More Info
+//                   </button>
+//                 </div>
+//               </div>
+//               {/* End */}
 
-              {/* Card3 */}
-              <div
-                className={
-                  className +
-                  "__Card bg-[#000029] h-[460px] text-black rounded-xl flex flex-col justify-center items-center"
-                }
-              >
-                <div
-                  className={
-                    InsideCard +
-                    "__insideCard rounded-xl w-full flex justify-center items-center"
-                  }
-                >
-                  <img
-                    src={Thor}
-                    alt=""
-                    className="h-80 w-[23rem] rounded-xl"
-                  />
-                </div>
-                <div className="flex flex-col  mt-2.5 ">
-                  <p className="text-xl text-white font-semibold">Thor</p>
-                  <p>Lorem</p>
-                  <button className="bg-blue-950 text-white h-7 w-24 rounded-xl">
-                    More Info
-                  </button>
-                </div>
-              </div>
-              {/* End */}
+//               {/* Card3 */}
+//               <div
+//                 className={
+//                   className +
+//                   "__Card bg-[#000029] h-[460px] text-black rounded-xl flex flex-col justify-center items-center"
+//                 }
+//               >
+//                 <div
+//                   className={
+//                     InsideCard +
+//                     "__insideCard rounded-xl w-full flex justify-center items-center"
+//                   }
+//                 >
+//                   <img
+//                     src={Thor}
+//                     alt=""
+//                     className="h-80 w-[23rem] rounded-xl"
+//                   />
+//                 </div>
+//                 <div className="flex flex-col  mt-2.5 ">
+//                   <p className="text-xl text-white font-semibold">Thor</p>
+//                   <p>Lorem</p>
+//                   <button className="bg-blue-950 text-white h-7 w-24 rounded-xl">
+//                     More Info
+//                   </button>
+//                 </div>
+//               </div>
+//               {/* End */}
 
-              {/* Card4 */}
-              <div
-                className={
-                  className +
-                  "__Card bg-[#000029] h-[460px] text-black rounded-xl flex flex-col justify-center items-center"
-                }
-              >
-                <div
-                  className={
-                    InsideCard +
-                    "__insideCard rounded-xl w-full flex justify-center items-center"
-                  }
-                >
-                  <img
-                    src={Hulk}
-                    alt=""
-                    className="h-80 w-[23rem] rounded-xl"
-                  />
-                </div>
-                <div className="flex flex-col  mt-2.5 ">
-                  <p className="text-xl text-white font-semibold">Hulk</p>
-                  <p>Lorem</p>
-                  <button className="bg-blue-950 text-white h-7 w-24 rounded-xl">
-                    More Info
-                  </button>
-                </div>
-              </div>
-              {/* End */}
+//               {/* Card4 */}
+//               <div
+//                 className={
+//                   className +
+//                   "__Card bg-[#000029] h-[460px] text-black rounded-xl flex flex-col justify-center items-center"
+//                 }
+//               >
+//                 <div
+//                   className={
+//                     InsideCard +
+//                     "__insideCard rounded-xl w-full flex justify-center items-center"
+//                   }
+//                 >
+//                   <img
+//                     src={Hulk}
+//                     alt=""
+//                     className="h-80 w-[23rem] rounded-xl"
+//                   />
+//                 </div>
+//                 <div className="flex flex-col  mt-2.5 ">
+//                   <p className="text-xl text-white font-semibold">Hulk</p>
+//                   <p>Lorem</p>
+//                   <button className="bg-blue-950 text-white h-7 w-24 rounded-xl">
+//                     More Info
+//                   </button>
+//                 </div>
+//               </div>
+//               {/* End */}
 
-              {/* Card5 */}
-              <div
-                className={
-                  className +
-                  "__Card bg-[#000029] h-[460px] text-black rounded-xl flex flex-col justify-center items-center"
-                }
-              >
-                <div
-                  className={
-                    InsideCard +
-                    "__insideCard rounded-xl w-full flex justify-center items-center"
-                  }
-                >
-                  <img
-                    src={BlackWidow}
-                    alt=""
-                    className="h-80 w-[23rem] rounded-xl"
-                  />
-                </div>
-                <div className="flex flex-col  mt-2.5 ">
-                  <p className="text-xl text-white font-semibold">
-                    Black Widow
-                  </p>
-                  <p>Lorem</p>
-                  <button className="bg-blue-950 text-white h-7 w-24 rounded-xl">
-                    More Info
-                  </button>
-                </div>
-              </div>
-              {/* End */}
+//               {/* Card5 */}
+//               <div
+//                 className={
+//                   className +
+//                   "__Card bg-[#000029] h-[460px] text-black rounded-xl flex flex-col justify-center items-center"
+//                 }
+//               >
+//                 <div
+//                   className={
+//                     InsideCard +
+//                     "__insideCard rounded-xl w-full flex justify-center items-center"
+//                   }
+//                 >
+//                   <img
+//                     src={BlackWidow}
+//                     alt=""
+//                     className="h-80 w-[23rem] rounded-xl"
+//                   />
+//                 </div>
+//                 <div className="flex flex-col  mt-2.5 ">
+//                   <p className="text-xl text-white font-semibold">
+//                     Black Widow
+//                   </p>
+//                   <p>Lorem</p>
+//                   <button className="bg-blue-950 text-white h-7 w-24 rounded-xl">
+//                     More Info
+//                   </button>
+//                 </div>
+//               </div>
+//               {/* End */}
 
-              {/* Card6 */}
-              <div
-                className={
-                  className +
-                  "__Card bg-[#000029] h-[460px] text-black rounded-xl flex flex-col justify-center items-center"
-                }
-              >
-                <div
-                  className={
-                    InsideCard +
-                    "__insideCard rounded-xl w-full flex justify-center items-center"
-                  }
-                >
-                  <img
-                    src={Hawkeye}
-                    alt=""
-                    className="h-80 w-[23rem] rounded-xl"
-                  />
-                </div>
-                <div className="flex flex-col  mt-2.5 ">
-                  <p className="text-xl text-white font-semibold">Hawkeye</p>
-                  <p>Lorem</p>
-                  <button className="bg-blue-950 text-white h-7 w-24 rounded-xl">
-                    More Info
-                  </button>
-                </div>
-              </div>
-              {/* End */}
-            </Slider>
-          </div>
-        </div>
-        {/* Sliding Menu Ends */}
-      </div>
-    </>
-  );
-};
+//               {/* Card6 */}
+//               <div
+//                 className={
+//                   className +
+//                   "__Card bg-[#000029] h-[460px] text-black rounded-xl flex flex-col justify-center items-center"
+//                 }
+//               >
+//                 <div
+//                   className={
+//                     InsideCard +
+//                     "__insideCard rounded-xl w-full flex justify-center items-center"
+//                   }
+//                 >
+//                   <img
+//                     src={Hawkeye}
+//                     alt=""
+//                     className="h-80 w-[23rem] rounded-xl"
+//                   />
+//                 </div>
+//                 <div className="flex flex-col  mt-2.5 ">
+//                   <p className="text-xl text-white font-semibold">Hawkeye</p>
+//                   <p>Lorem</p>
+//                   <button className="bg-blue-950 text-white h-7 w-24 rounded-xl">
+//                     More Info
+//                   </button>
+//                 </div>
+//               </div>
+//               {/* End */}
+//             </Slider>
+//           </div>
+//         </div>
+//         {/* Sliding Menu Ends */}
+//       </div>
+//     </>
+//   );
+// };
 
-export default SlidingMenu;
+// export default SlidingMenu;
 
 // const SlidingMenu = () => {
 //     const settings = {
