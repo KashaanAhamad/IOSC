@@ -1,0 +1,8 @@
+.slick-slide > div {
+    margin: 0 10px;
+}
+
+.MainBox__box{
+    flex-direction: row;
+    width: screen;
+}

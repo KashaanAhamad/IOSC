@@ -1,0 +1,42 @@
+.AppContainer{
+    width: full;
+  height: 25rem;
+  color: #000000;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Wrapper{
+    width: 100%;
+    height: fit-content;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.Text{
+    font-size: 60px;
+    font-weight: 400;
+    margin-bottom: 5rem;
+    color: white;
+}
+
+/* .Note{
+    font-size: 18px;
+    font-weight: 200;
+    margin-bottom: 40px;
+    color: white;
+} */
+
+
+.ImageGroup{
+    display: grid;
+    place-items: center;
+    width: clamp(10rem, 1rem + 40vmin, 30rem);
+    padding: calc(clamp(10rem, 1rem + 30vmin, 30rem) / 10);
+}
