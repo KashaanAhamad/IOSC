@@ -1,19 +1,31 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../index.css";
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Iosclogo from "../Assets/website background.png";
-import backGroundImage from "../Assets/background.jpg";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import videoSrc from "../Assets/Nature.mp4";
 
 const Home = () => {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      requestAnimationFrame(() => {
+        setScrollY(window.scrollY);
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const scrollToElement = (elementId, duration) => {
     const target = document.getElementById(elementId);
     if (!target) return;
 
     const startPosition = window.pageYOffset;
-    const targetPosition = target.getBoundingClientRect().top;
+    const targetPosition = target.getBoundingClientRect().top + startPosition;
     const startTime = performance.now();
 
     const easeInOutQuad = (t) =>
@@ -21,39 +33,38 @@ const Home = () => {
 
     const animateScroll = (currentTime) => {
       const timeElapsed = currentTime - startTime;
-      const run =
-        easeInOutQuad(timeElapsed / duration) * targetPosition + startPosition;
+      const progress = easeInOutQuad(timeElapsed / duration);
+      const run = progress * (targetPosition - startPosition) + startPosition;
       window.scrollTo(0, run);
 
       if (timeElapsed < duration) {
         requestAnimationFrame(animateScroll);
       } else {
-        window.scrollTo(0, startPosition + targetPosition); // Ensure it ends at the exact position
+        window.scrollTo(0, targetPosition);
       }
     };
 
     requestAnimationFrame(animateScroll);
   };
 
-
-  // useEffect(() => {
-  //   AOS.init({
-  //     duration: 1000, // duration of the animation
-  //     once: true, // animation occurs only once
-  //   });
-  // }, []);
-
   return (
     <>
-      <div className="h-screen w-[94.55rem] bg-fixed" style={{
-          backgroundImage: `url(${backGroundImage})`,
-          backgroundPosition: `center`,
-          backgroundSize: `cover`,
-        }}
-      >
-        <div className="bg-transparent">
-          <header className=" flex items-center justify-center  bg-opacity-5 text-white  hidden md:block">
-            <div className="container mx-auto flex items-center h-20 ">
+      <div className="h-screen w-full relative z-[1] overflow-hidden">
+        <video
+          className="absolute top-0 left-0 w-full h-full object-cover"
+          src={videoSrc}
+          autoPlay
+          loop
+          muted
+          style={{
+            transform: `translateY(${scrollY * 0.5}px)`, // Adjust the parallax effect speed
+            willChange: "transform", // Optimize for better performance
+          }}
+        />
+
+        <div className="relative z-[2] bg-transparent h-[5.5rem]">
+          <header className="flex items-center justify-center bg-opacity-5 text-white hidden md:block">
+            <div className="container mx-auto flex items-center h-20">
               <a href="" className="flex items-center justify-center">
                 <img src={Iosclogo} alt="" className="h-14" />
               </a>
@@ -69,110 +80,31 @@ const Home = () => {
                   </Link>
                   <Link
                     className="p-5 xl:p-8 hover:text-blue-200"
-                    onClick={() => scrollToElement("Departments", 1500)} // 1000ms = 1 second duration
+                    onClick={() => scrollToElement("Departments", 1500)}
                   >
                     <span>Departments</span>
                   </Link>
                   <Link
                     className="p-5 xl:p-8 hover:text-blue-200"
-                    onClick={() => scrollToElement("Events", 1000)} // 1000ms = 1 second duration
+                    onClick={() => scrollToElement("Events", 1000)}
                   >
                     <span>Events</span>
                   </Link>
                 </ul>
               </nav>
-              <button className="bg-transparent text-blue-200 h-10 w-32 rounded-full border-2 border-blue-300 transition-colors duration-700 hover:text-white hover:bg-blue-400 hover:border-black">
-                Contact Us
-              </button>
+              <Link onClick={() => scrollToElement("Footer", 1800)}>
+                <button className="bg-transparent text-blue-200 h-10 w-32 rounded-full border-2 border-blue-300 transition-colors duration-700 hover:text-white hover:bg-blue-400 hover:border-black">
+                  Contact Us
+                </button>
+              </Link>
             </div>
           </header>
         </div>
       </div>
-
-
-        {/* <Nav /> */}
-
-
-
-
-
-
     </>
   );
 };
 
 export default Home;
 
-// const Nav = () => {
-//   return (
-//     <>
-//       <div className="flex items-center h-[10rem] z-[-1] bg-neutral-100 py-20">
-//       <SlideTabs />
-//       </div>
 
-//     </>
-//   )
-// }
-
-// const SlideTabs = () => {
-//   const [position, setPosition] = useState({
-//     left: 0,
-//     width: 0,
-//     opacity: 0,
-//   });
-
-//   return (
-//     <ul
-//       onMouseLeave={() => {
-//         setPosition((pv) => ({
-//           ...pv,
-//           opacity: 0,
-//         }));
-//       }}
-//       className="relative mx-auto flex w-fit rounded-full border-2 border-black bg-white p-1"
-//     >
-//       <Tab setPosition={setPosition}>Home</Tab>
-//       <Tab setPosition={setPosition}>Pricing</Tab>
-//       <Tab setPosition={setPosition}>Features</Tab>
-//       <Tab setPosition={setPosition}>Docs</Tab>
-//       <Tab setPosition={setPosition}>Blog</Tab>
-
-//       <Cursor position={position} />
-//     </ul>
-//   );
-// };
-
-// const Tab = ({ children, setPosition }) => {
-//   const ref = useRef(null);
-
-//   return (
-//     <li
-//       ref={ref}
-//       onMouseEnter={() => {
-//         if (!ref?.current) return;
-
-//         const { width } = ref.current.getBoundingClientRect();
-
-//         setPosition({
-//           left: ref.current.offsetLeft,
-//           width,
-//           opacity: 1,
-//         });
-//       }}
-//       className="relative z-10 block cursor-pointer px-3 py-1.5 text-xs uppercase text-white mix-blend-difference md:px-5 md:py-3 md:text-base"
-//     >
-//       {children}
-//     </li>
-//   );
-// };
-
-// const Cursor = ({ position }) => {
-//   return (
-//     <motion.li
-//       animate={{
-//         ...position,
-//       }}
-//       className="absolute z-0 h-7 rounded-full bg-black md:h-12"
-//     />
-//   );
-// };

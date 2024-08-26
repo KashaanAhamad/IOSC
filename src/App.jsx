@@ -28,7 +28,7 @@ const App = () => {
       {/* <SlidingMenu /> */}
       <MovingText />
 
-      <footer className="relative h-[20rem] pt-[4rem] content-center bg-[#000029] pt-8 pb-6 transition delay-500">
+      <footer id="Footer" className="relative h-[20rem] w-[94.55rem] pt-[4rem] content-center bg-[#000029] pt-8 pb-6 transition delay-500">
         <div className="container mx-auto px-4" data-aos="fade-up">
           <div className="flex flex-wrap text-left lg:text-left">
             <div className="w-full lg:w-6/12 px-4">

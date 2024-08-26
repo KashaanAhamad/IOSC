@@ -12,6 +12,7 @@ import WebD from "../Assets/Web.jpg";
 import IOT from "../Assets/IOT.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
+// import IronMan from "../Assets/iron-man.svg" 
 
 const Example = () => {
 
@@ -19,14 +20,14 @@ const Example = () => {
     AOS.init({
       duration: 1000, // duration of the animation
       easing: 'ease-in-out', // easing of the animation
-      once: false, // animation occurs only once
+      once: true, // animation occurs only once
     });
   }, []);
 
 
   return (
-    <div id="Departments" className="grid h-[45rem] w-[94.55rem] gap-4 place-content-center bg-[#000029]  px-4  text-slate-900">
-      <div className="text-6xl h-[10rem] text-white text-center">
+    <div id="Departments" className="grid h-[45rem] w-[94.55rem]  gap-4 place-content-center bg-[#000029]  px-4  text-slate-900">
+      <div className="text-6xl h-[10rem] text-white text-center" data-aos="fade-up">
         <h1>Our Departments</h1>
       </div>
       {/* <div className="flex gap-[10rem]"  data-aos="fade-up">

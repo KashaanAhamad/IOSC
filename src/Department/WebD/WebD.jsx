@@ -65,13 +65,13 @@ export default WebD;
 
 const Nav = () => {
   return (
-    <nav className="fixed  right-[1px] top-0 z-50 flex items-center justify-between px-6 py-3 text-white">
+    <nav className="fixed w-screen  right-[1px] top-0 z-50 flex items-center justify-between px-6 py-3 text-white">
       {/* <SiSpacex className="text-3xl mix-blend-difference" /> */}
-      <div className="flex items-center mr-[37rem] gap-1 text-zinc-400 hover:text-white cursor-pointer">
-        <p className=" text-2xl">IOSC-WEBD</p>
+      <div className="flex justify-center w-full ml-[6rem]">
+        <a href="" className=" text-2xl text-zinc-400 hover:text-white">IOSC-WEBD</a>
       </div>
       <button
-        onClick={() => {
+        onClick={() => { 
           document.getElementById("Projects")?.scrollIntoView({
             behavior: "smooth",
           });
@@ -195,27 +195,7 @@ const ParallaxImg = ({ className, alt, src, start, end }) => {
   );
 };
 
-//
 
-// const ScheduleItem = ({ title, date, location }) => {
-//   return (
-//     <motion.div
-//       initial={{ y: 48, opacity: 0 }}
-//       whileInView={{ y: 0, opacity: 1 }}
-//       transition={{ ease: "easeInOut", duration: 0.75 }}
-//       className="mb-9 flex items-center justify-between border-b border-zinc-800 px-3 pb-9"
-//     >
-//       <div>
-//         <p className="mb-1.5 text-xl text-zinc-50">{title}</p>
-//         <p className="text-sm uppercase text-zinc-500">{date}</p>
-//       </div>
-//       <div className="flex items-center gap-1.5 text-end text-sm uppercase text-zinc-500">
-//         <p>{location}</p>
-//         <FiMapPin />
-//       </div>
-//     </motion.div>
-//   );
-// };
 
 // Footer Links Start
 
@@ -284,6 +264,9 @@ const FlipLink = ({ children, href }) => {
 };
 
 // Footer Links End
+
+
+
 
 // Project Starts
 
@@ -434,6 +417,8 @@ const Link = ({ heading, imgSrc, subheading, href }) => {
 
 // Project Ends
 
+
+
 // TEXTPARALLAX STARTS
 
 const TextParallaxContentExample = () => {
@@ -464,6 +449,10 @@ const TextParallaxContentExample = () => {
   );
 };
 
+
+
+
+
 // Image Heading Starts
 
 const IMG_PADDING = 12;
@@ -486,6 +475,9 @@ const TextParallaxContent = ({ imgUrl, subheading, heading, children }) => {
 };
 
 // Image Heading Ends
+
+
+
 
 // Images Function Starts
 
@@ -524,6 +516,9 @@ const StickyImage = ({ imgUrl }) => {
 
 // Images Function Ends
 
+
+
+
 const OverlayCopy = ({ subheading, heading }) => {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -551,6 +546,10 @@ const OverlayCopy = ({ subheading, heading }) => {
   );
 };
 
+
+
+
+
 // Content Starts
 
 const ExampleContent1 = () => (
@@ -569,9 +568,6 @@ const ExampleContent1 = () => (
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
         reiciendis blanditiis aliquam aut fugit sint.
       </p>
-      {/* <button className="w-full rounded bg-neutral-900 px-9 py-4 text-xl text-white transition-colors hover:bg-neutral-700 md:w-fit">
-        Learn more <FiArrowUpRight className="inline" />
-      </button> */}
     </div>
   </div>
 );
@@ -592,9 +588,6 @@ const ExampleContent2 = () => (
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
         reiciendis blanditiis aliquam aut fugit sint.
       </p>
-      {/* <button className="w-full rounded bg-neutral-900 px-9 py-4 text-xl text-white transition-colors hover:bg-neutral-700 md:w-fit">
-        Learn more <FiArrowUpRight className="inline" />
-      </button> */}
     </div>
   </div>
 );
@@ -615,9 +608,7 @@ const ExampleContent3 = () => (
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
         reiciendis blanditiis aliquam aut fugit sint.
       </p>
-      {/* <button className="w-full rounded bg-neutral-900 px-9 py-4 text-xl text-white transition-colors hover:bg-neutral-700 md:w-fit">
-        Learn more <FiArrowUpRight className="inline" />
-      </button> */}
+  
     </div>
   </div>
 );
