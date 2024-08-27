@@ -69,4 +69,4 @@ function OpenCard() {
   )
 }
 
-export default OpenCard
+export default OpenCard    
